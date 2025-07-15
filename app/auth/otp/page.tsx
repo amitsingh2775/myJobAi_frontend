@@ -13,7 +13,6 @@ function OTPPage() {
   const [error, setError] = useState("");
   const router = useRouter();
 
-  // ✅ Load email from sessionStorage after component mounts
   useEffect(() => {
     const storedEmail = sessionStorage.getItem("email");
     if (!storedEmail) {
@@ -64,9 +63,9 @@ function OTPPage() {
     try {
       const res = await api.post("/api/auth/verify", { email, otp });
       if (res.status === 200) {
-        if(email){
-          sessionStorage.clear()
-        }
+        // if(email){
+        //   sessionStorage.clear()
+        // }
         setSuccess(true);
         router.push("/dashboard")
       }
