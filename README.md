@@ -1,36 +1,147 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# myjobb AI - Full Stack Developer Intern Assignment (Frontend)
 
-## Getting Started
+## Project Overview
 
-First, run the development server:
+This repository contains the frontend implementation for the myjobb AI Full Stack Developer Intern Assignment. Built with **Next.js**, **TailwindCSS**, and **shadcn/ui**, it provides a responsive dashboard with Email OTP-based authentication. The application is deployed on **Vercel** for production use.
+
+### 🔗 Live Frontend URL
+
+**Frontend:** https://products-eight-dun.vercel.app
+
+---
+
+## Features
+
+### ✅ Authentication Interface
+
+- **Register**: Sign up with email, name, and password to trigger an OTP email.
+- **OTP Verification**: Enter 6-digit OTP with a "Resend OTP" option.
+- **Login/Logout**: Secure login form and logout via sidebar.
+- **User Feedback**: Toast notifications using `react-hot-toast`.
+- **Responsive Design**: Authentication pages optimized for all devices using TailwindCSS.
+
+### 📊 Dashboard Interface
+
+- **Sidebar**: Built with `shadcn/ui` for navigation to Products and Analytics.
+- **Products Tab**: Displays DummyJSON API data in a responsive table.
+
+#### Data Presentation:
+- Product details (title, price, category, rating) in a clean table.
+- **Bonus Feature**: Analytics visualizations (e.g., category distribution, price ranges) if implemented.
+
+- **Responsive UI**: Adapts to all device sizes.
+
+---
+
+## 🛠️ Technical Stack
+
+- **Next.js**: For SSR, client-side navigation, and API route rewrites.
+- **TailwindCSS**: For responsive styling.
+- **shadcn/ui**: For reusable UI components.
+- **Axios**: For API requests to the backend.
+- **react-hot-toast**: For notifications.
+- **jsonwebtoken**: For client-side JWT verification (if applicable).
+
+---
+
+## 🚀 Setup Instructions
+
+### Prerequisites
+
+- Node.js: v16 or higher
+- Backend API: Running at https://my-job-ai-backend.vercel.app/
+- Vercel CLI: For local development and deployment
+
+### Installation
+
+```bash
+https://github.com/amitsingh2775/myJobAi_frontend.git
+cd myJobAi_frontend
+```
+
+```bash
+npm install
+```
+
+Create a `.env.local` file:
+
+```bash
+touch .env.local
+```
+
+Add the following environment variables:
+
+```bash
+echo "NEXT_PUBLIC_BACKEND_URI=https://your-backend.vercel.app" >> .env.local
+echo "JWT_SECRET=your-super-secret-key" >> .env.local
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The frontend runs on: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ☁️ Deployment (Vercel)
 
-## Learn More
+Push the code to a GitHub repository:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git push origin main
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install Vercel CLI and deploy:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm install -g vercel
+vercel
+```
 
-## Deploy on Vercel
+Add environment variables in the Vercel dashboard:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `NEXT_PUBLIC_BACKEND_URI=https://your-backend.vercel.app`
+- `JWT_SECRET=your-super-secret-key`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Once deployed, the app is accessible at: **https://products-eight-dun.vercel.app**
+
+---
+
+## 📘 Usage Guide
+
+- **Register**: Visit `/auth/register` to sign up and receive an OTP.
+- **Verify OTP**: Visit `/auth/verify` to enter OTP. Use "Resend OTP" if needed.
+- **Login**: Go to `/auth/login` to log in with email and password.
+- **Dashboard**: Navigate to `/dashboard` to view products and analytics.
+- **Logout**: Use the sidebar to logout securely.
+
+---
+
+## ✅ Code Quality
+
+- **Modular Structure**: Organized components, utilities, and pages.
+- **Responsive Design**: Built with TailwindCSS for full responsiveness.
+- **Error Handling**: Robust API error handling and input validation.
+- **UI/UX**: Intuitive experience using `shadcn/ui` and toast notifications.
+
+---
+
+## 🐞 Known Issues
+
+- **Cookie Persistence**: Cookies may not persist in some browsers due to strict policies. This is mitigated using `sameSite: 'Lax'` and `secure: true`, but further testing is ongoing.
+- **Debug Logs**: A "yes removed" log appears in development for debugging. Safe to ignore in production.
+
+---
+
+## 🔮 Future Improvements
+
+- Add interactive filters for products table.
+- Enhance analytics with better visualizations.
+- Implement client-side form validation.
+- Support dark mode.
+
+---
+
