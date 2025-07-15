@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const api = axios.create({
-  baseURL: "https://my-job-ai-backend.vercel.app",
+  baseURL:process.env.BACKEND_URI,
   withCredentials: true,
   
 });
